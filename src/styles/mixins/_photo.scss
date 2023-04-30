@@ -1,0 +1,9 @@
+@mixin photo {
+  position: relative;
+  z-index: 10;
+  box-shadow: 7px 10px 34px -15px rgba(0, 0, 6, 1);
+  object-fit: cover;
+  border-radius: 20px;
+  height: 400px;
+  max-width: 350px;
+}

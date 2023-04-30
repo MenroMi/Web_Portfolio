@@ -1,13 +1,17 @@
+@import "../styles/mixins/opacity";
+@import "../styles/mixins/photo";
+
 .about {
   padding-top: var(--pdg-top);
   display: flex;
   justify-content: space-between;
+  @include opc;
 
   .info {
     background-color: var(--clr-primary);
     display: flex;
     flex-direction: column;
-    width: 620px;
+    max-width: 620px;
 
     &__title {
       font-size: 36px;
@@ -39,10 +43,5 @@
 }
 
 .main-photo {
-  align-self: center;
-  box-shadow: 8px 3px 40px -23px rgba(0, 0, 0, 1);
-  object-fit: cover;
-  border-radius: 20px;
-  height: 400px;
-  max-width: 350px;
+  @include photo;
 }

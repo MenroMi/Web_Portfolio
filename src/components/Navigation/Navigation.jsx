@@ -4,7 +4,6 @@ import Logo from "../Logo/Logo";
 import Button from "@mui/material/Button";
 import { Stack } from "@mui/material";
 import styles from "../../styles/Navigation.module.scss";
-import { useEffect, useRef, useState } from "react";
 
 const btnsArr = [
   { label: "About", link: "about", id: 1 },

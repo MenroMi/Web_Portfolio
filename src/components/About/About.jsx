@@ -3,10 +3,21 @@ import Button from "@mui/material/Button";
 
 import styles from "../../styles/About.module.scss";
 import myImg from "../../../public/myImage.jpg";
+import useVisible from "@/hooks/useVisible";
 
 export default function About() {
+  const { value, elemRef } = useVisible();
+
   return (
-    <section id="about" className={styles.about}>
+    <section
+      style={{
+        opacity: `${value ? 1 : 0}`,
+        transition: `${value ? "0.7s all" : ""}`,
+      }}
+      ref={elemRef}
+      id="about"
+      className={styles.about}
+    >
       <Image src={myImg} alt="man" className={styles["main-photo"]} />
 
       <div className={styles.info}>

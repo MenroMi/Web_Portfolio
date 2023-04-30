@@ -1,15 +1,13 @@
 .nav {
   &__cells {
     height: 80px;
-    // background-color: var(--clr-primary);
-    display: flex;
-    justify-content: space-between;
     align-items: center;
     max-width: var(--width-container);
     margin: 0 auto;
   }
 
-  &__menu {
+  &__menu,
+  &__cells {
     display: flex;
     justify-content: space-between;
   }
@@ -19,7 +17,7 @@ nav > div .Button {
   width: 100px;
   height: 40px;
   border: none;
-  color: #bdd0f5;
+  color: var(--clr-txt-primary);
   border-radius: var(--border-btn);
   &:hover {
     border: 2px solid var(--clr-txt-primary);
@@ -27,7 +25,7 @@ nav > div .Button {
 
   a {
     width: 100%;
-    color: #bdd0f5;
+    color: var(--clr-txt-primary);
     text-decoration: none;
   }
 }

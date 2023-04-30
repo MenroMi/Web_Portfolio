@@ -1,7 +1,11 @@
+@import "../styles/mixins/opacity";
+
 .projects {
   background-color: var(--clr-primary);
   min-height: 800px;
   padding-top: var(--pdg-top);
+  @include opc;
+
   &__title {
     font-size: 48px;
     text-align: center;

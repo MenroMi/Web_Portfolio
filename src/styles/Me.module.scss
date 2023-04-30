@@ -1,8 +1,10 @@
+@import "../styles/mixins/photo";
+@import "../styles/mixins/flexx";
+
 .me {
   min-height: 400px;
   padding-top: 100px;
-  display: flex;
-  justify-content: space-between;
+  @include flex;
 }
 
 .info {
@@ -11,10 +13,11 @@
   background-color: var(--clr-primary);
   max-width: 620px;
   padding-top: 7px;
+  font-weight: 700;
+
   &__lvl {
     text-align: right;
     margin-right: 50px;
-    font-weight: 700;
     font-size: 25px;
     line-height: 19px;
     span {
@@ -24,9 +27,7 @@
     }
   }
   &__pos {
-    margin-left: -4px;
-    margin-top: 40px;
-    font-weight: 700;
+    margin: 40px 0 0 -4px;
     font-size: 100px;
     line-height: 90px;
     span {
@@ -77,13 +78,7 @@
 }
 
 .main-photo {
-  position: relative;
-  z-index: 10;
-  box-shadow: 7px 10px 34px -15px rgba(0, 0, 6, 1);
-  object-fit: cover;
-  border-radius: 20px;
-  height: 400px;
-  max-width: 350px;
+  @include photo;
   transition: 0.3s all;
   &:hover {
     filter: brightness(110%);

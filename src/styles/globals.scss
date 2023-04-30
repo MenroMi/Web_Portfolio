@@ -34,3 +34,8 @@ ul,
 li {
   list-style: none;
 }
+
+.active {
+  transition: 0.3s all;
+  opacity: 1;
+}

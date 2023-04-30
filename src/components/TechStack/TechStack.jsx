@@ -11,6 +11,9 @@ import iconHTML from "../../assets/icons-technologies/html.svg";
 import iconSASS from "../../assets/icons-technologies/sass.svg";
 import iconGIT from "../../assets/icons-technologies/git.svg";
 
+// hooks
+import useVisible from "@/hooks/useVisible";
+
 // styles
 import styles from "../../styles/TechStack.module.scss";
 
@@ -34,8 +37,18 @@ const stack = [
 ];
 
 export default function TechStack() {
+  const { value, elemRef } = useVisible();
+
   return (
-    <section id="stack" className={styles["stack"]}>
+    <section
+      style={{
+        opacity: `${value ? 1 : 0}`,
+        transition: `${value ? "0.7s all" : ""}`,
+      }}
+      ref={elemRef}
+      id="stack"
+      className={styles["stack"]}
+    >
       <div className={styles["stack__info"]}>
         <h2>My Tech Stack</h2>
         <ul>

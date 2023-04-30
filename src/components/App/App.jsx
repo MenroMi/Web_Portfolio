@@ -9,6 +9,7 @@ import About from "../About/About";
 import Projects from "../Projects/Projects";
 import TechStack from "../TechStack/TechStack";
 import Contact from "../Contact/Contact";
+import useVisible from "@/hooks/useVisible";
 
 // preloader
 import PreloaderComponent from "../PreloaderComponent/PreloaderComponent";
@@ -18,6 +19,7 @@ import styles from "../../styles/Home.module.scss";
 
 export default function App() {
   const [load, setLoad] = useState(true);
+  const { value, elemRef } = useVisible();
 
   useEffect(() => {
     setTimeout(() => setLoad(false), 2000);

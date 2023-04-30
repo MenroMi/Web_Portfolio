@@ -1,7 +1,12 @@
+@import "../styles/mixins/opacity";
+@import "../styles/mixins/flexx";
+
 .contact {
   background-color: var(--clr-primary);
   min-height: 200px;
   padding-top: var(--pdg-top);
+  @include opc;
+
   &__title {
     font-size: 48px;
     text-align: center;
@@ -9,11 +14,8 @@
 
   &__list {
     margin-top: 50px;
-    display: flex;
-    justify-content: space-between;
+    @include flex;
     button {
-      width: 100%;
-      height: 100%;
       border: none;
       border-radius: 10px;
       &:hover {
@@ -21,11 +23,15 @@
         background-color: rgba(0, 0, 0, 0.2);
       }
       a {
-        height: 100%;
-        width: 100%;
         font-size: 30px;
         color: var(--clr-txt-primary);
       }
+    }
+
+    button,
+    button > a {
+      height: 100%;
+      width: 100%;
     }
   }
 }
