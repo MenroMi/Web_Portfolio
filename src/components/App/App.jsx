@@ -1,5 +1,5 @@
 // basic
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 // components
 import Header from "../Header/Header";
@@ -15,7 +15,6 @@ import PreloaderComponent from "../PreloaderComponent/PreloaderComponent";
 
 // styles
 import styles from "../../styles/Home.module.scss";
-import { useState } from "react";
 
 export default function App() {
   const [load, setLoad] = useState(true);

@@ -6,6 +6,8 @@
 }
 
 .info {
+  position: relative;
+  z-index: 10;
   background-color: var(--clr-primary);
   max-width: 620px;
   padding-top: 7px;
@@ -37,10 +39,63 @@
   }
 }
 
+.image {
+  position: relative;
+
+  &__bg {
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    z-index: 9;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: linear-gradient(
+      309deg,
+      rgba(255, 255, 255, 1) 17%,
+      rgba(242, 190, 107, 1) 68%
+    );
+
+    filter: blur(80px);
+    transition: 0.5s;
+
+    &:before {
+      content: "";
+      display: block;
+
+      width: 100%;
+
+      height: 100%;
+      background: linear-gradient(
+        309deg,
+        rgba(242, 190, 107, 1) 47%,
+        rgba(255, 255, 255, 1) 68%
+      );
+      animation: animate01 10s linear infinite;
+    }
+  }
+}
+
 .main-photo {
-  box-shadow: 8px 3px 40px -23px rgba(0, 0, 0, 1);
+  position: relative;
+  z-index: 10;
+  box-shadow: 7px 10px 34px -15px rgba(0, 0, 6, 1);
   object-fit: cover;
   border-radius: 20px;
   height: 400px;
   max-width: 350px;
+  transition: 0.3s all;
+  &:hover {
+    filter: brightness(110%);
+    transform: scale(110%);
+  }
+}
+
+@keyframes animate01 {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }

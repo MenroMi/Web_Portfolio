@@ -21,7 +21,10 @@ export default function Me() {
           esse? Dicta vitae eligendi, deleniti non animi veritatis natus quas?
         </div>
       </div>
-      <Image src={myImg} alt="man" className={styles["main-photo"]} />
+      <div className={styles.image}>
+        <div className={styles["image__bg"]}></div>
+        <Image src={myImg} alt="man" className={styles["main-photo"]} />
+      </div>
     </section>
   );
 }

@@ -4,6 +4,8 @@ import projects from "../../database/projects";
 // components
 import Project from "../Project/Project";
 
+import useVisible from "@/hooks/useVisible";
+
 // styles
 import styles from "../../styles/Projects.module.scss";
 
