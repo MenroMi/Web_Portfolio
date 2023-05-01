@@ -1,5 +1,6 @@
 @import "../styles/mixins/photo";
 @import "../styles/mixins/flexx";
+@import "../styles/mixins/txt-typed";
 
 .me {
   min-height: 400px;
@@ -20,6 +21,7 @@
     margin-right: 50px;
     font-size: 25px;
     line-height: 19px;
+
     span {
       border: 2px solid var(--clr-border-lvl);
       padding: 0 10px;
@@ -27,7 +29,7 @@
     }
   }
   &__pos {
-    margin: 40px 0 0 -4px;
+    margin: 20px 0 0 -4px;
     font-size: 100px;
     line-height: 90px;
     span {
@@ -36,6 +38,7 @@
   }
 
   &__descr {
+    font-weight: 400;
     margin-top: 40px;
   }
 }
@@ -63,9 +66,7 @@
     &:before {
       content: "";
       display: block;
-
       width: 100%;
-
       height: 100%;
       background: linear-gradient(
         309deg,
@@ -75,6 +76,11 @@
       animation: animate01 10s linear infinite;
     }
   }
+}
+
+#txt-type-dyn {
+  font-size: 45px;
+  @include txt-typed-anim;
 }
 
 .main-photo {

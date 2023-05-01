@@ -2,13 +2,16 @@ import Image from "next/image";
 import myImg from "../../../public/myImage.jpg";
 
 import styles from "../../styles/Me.module.scss";
+import useTyped from "@/hooks/useTyped";
 
 export default function Me() {
+  const { txt } = useTyped();
+
   return (
     <section className={styles.me}>
       <div className={styles.info}>
-        <div className={styles["info__lvl"]}>
-          <span>JUNIOR</span>
+        <div id={styles["txt-type-dyn"]}>
+          {txt} <span></span>
         </div>
         <div className={styles["info__pos"]}>
           FRONT<span>-</span>END

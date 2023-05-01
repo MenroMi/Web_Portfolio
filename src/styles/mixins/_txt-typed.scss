@@ -1,0 +1,19 @@
+@mixin txt-typed-anim {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  span {
+    margin-left: 5px;
+    border-right: 10px solid var(--clr-txt-primary);
+    animation: blinkTextCursor 800ms steps(44) infinite normal;
+  }
+}
+
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
