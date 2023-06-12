@@ -1,43 +1,25 @@
-// basic
-import { useEffect, useState } from "react";
-
 // components
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
-import Me from "../Me/Me";
-import About from "../About/About";
-import Projects from "../Projects/Projects";
-import TechStack from "../TechStack/TechStack";
-import Contact from "../Contact/Contact";
-import useVisible from "@/hooks/useVisible";
-
-// preloader
-import PreloaderComponent from "../PreloaderComponent/PreloaderComponent";
+import Footer from '../Footer/Footer';
+import Me from '../Me/Me';
+import About from '../About/About';
+import Projects from '../Projects/Projects';
+import TechStack from '../TechStack/TechStack';
+import Contact from '../Contact/Contact';
 
 // styles
-import styles from "../../styles/Home.module.scss";
+import styles from '@/styles/Home.module.scss';
 
 export default function App() {
-  const [load, setLoad] = useState(true);
-  const { value, elemRef } = useVisible();
-
-  useEffect(() => {
-    setTimeout(() => setLoad(false), 2000);
-  }, []);
-
-  return load ? (
-    <PreloaderComponent />
-  ) : (
-    <div className={styles.app}>
-      <Header />
+  return (
+    <>
       <div className={styles.sections}>
         <Me />
-        <About />
-        <Projects />
-        <TechStack />
-        <Contact />
+        {/* <About /> */}
+        {/* <Projects /> */}
+        {/* <TechStack /> */}
+        {/* <Contact /> */}
       </div>
       <Footer />
-    </div>
+    </>
   );
 }
