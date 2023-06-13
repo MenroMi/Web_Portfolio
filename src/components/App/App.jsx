@@ -8,11 +8,15 @@ import Contact from '../Contact/Contact';
 
 // styles
 import styles from '@/styles/Home.module.scss';
-import { useContext } from 'react';
+import { use, useContext } from 'react';
 import { BurgerMenuContext } from '@/providers/burgerMenuContext';
+import useWindowSize from '@/hooks/useWIndowSize';
 
 export default function App() {
   const burgerContext = useContext(BurgerMenuContext);
+  const {
+    windowSize: { width },
+  } = useWindowSize();
 
   return (
     <>
@@ -24,7 +28,7 @@ export default function App() {
         {/* <Contact /> */}
       </div>
       <Footer />
-      {burgerContext.isOpen && (
+      {burgerContext.isOpen && width <= 900 && (
         <div onClick={burgerContext.setIsOpen} className={styles.overlay}></div>
       )}
     </>

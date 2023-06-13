@@ -6,7 +6,6 @@
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  padding: 0 50px;
 }
 
 nav > .btn-wrapper {
@@ -35,6 +34,12 @@ nav > .btn-wrapper {
       color: var(--clr-txt-primary);
       text-decoration: none;
     }
+  }
+}
+
+@media (max-width: 1300px) {
+  .nav {
+    padding: 0 50px;
   }
 }
 

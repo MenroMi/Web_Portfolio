@@ -1,3 +1,6 @@
+// basic
+import { useEffect } from 'react';
+
 import Image from 'next/image';
 import Button from '@mui/material/Button';
 
@@ -5,7 +8,6 @@ import styles from '../../styles/About.module.scss';
 import myImg from '../../../public/myImage.jpg';
 import useVisible from '@/hooks/useVisible';
 import useWindowSize from '@/hooks/useWIndowSize';
-import { useEffect } from 'react';
 
 export default function About() {
   const { value, elemRef, setRootMargin, rootMargin } = useVisible();

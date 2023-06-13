@@ -1,10 +1,11 @@
-@import "../styles/mixins/opacity";
-@import "../styles/mixins/photo";
+@import '../styles/mixins/opacity';
+@import '../styles/mixins/photo';
 
 .about {
   padding-top: var(--pdg-top);
   display: flex;
   justify-content: space-between;
+  gap: 20px;
   @include opc;
 
   .info {
