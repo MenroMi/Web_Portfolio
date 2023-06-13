@@ -24,7 +24,7 @@ export default function App() {
         <Me />
         <About />
         <Projects />
-        {/* <TechStack /> */}
+        <TechStack />
         {/* <Contact /> */}
       </div>
       <Footer />

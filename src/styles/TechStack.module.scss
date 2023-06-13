@@ -1,8 +1,11 @@
-@import "../styles/mixins/opacity";
+@import '../styles/mixins/opacity';
 
 .stack {
   background-color: var(--clr-primary);
   min-height: 500px;
+  max-width: var(--width-container);
+  width: 100%;
+  object-fit: cover;
   display: flex;
   justify-content: space-between;
   padding-top: var(--pdg-top);
@@ -11,26 +14,13 @@
   &__info {
     display: flex;
     flex-direction: column;
+    max-width: var(--width-container);
     width: 100%;
     height: 100%;
     h2 {
       text-align: center;
       margin-top: -5px;
       font-size: 48px;
-    }
-
-    ul {
-      margin: 70px auto 0 auto;
-      display: grid;
-      grid-template: 1fr 1fr / repeat(4, 1fr);
-      gap: 80px;
-
-      li {
-        display: flex;
-        align-items: center;
-        font-size: 22px;
-        gap: 25px;
-      }
     }
   }
 }

@@ -1,5 +1,13 @@
 import burgerMenuIcon from '@/assets/icons-tech/burger-menu.svg';
 import crossMenuIcon from '@/assets/icons-tech/cross.svg';
+import iconCSS from '@/assets/icons-technologies/css.svg';
+import iconJS from '@/assets/icons-technologies/js.svg';
+import iconReact from '@/assets/icons-technologies/react.svg';
+import iconRedux from '@/assets/icons-technologies/redux.svg';
+import iconTS from '@/assets/icons-technologies/ts.svg';
+import iconHTML from '@/assets/icons-technologies/html.svg';
+import iconSASS from '@/assets/icons-technologies/sass.svg';
+import iconGIT from '@/assets/icons-technologies/git.svg';
 
 export const contact = [
   { name: 'E-mail', link: 'mailto:k.shchasny@gmail.com', id: 1 },
@@ -76,3 +84,52 @@ export const projects = [
     id: 6,
   },
 ];
+
+export const stack = [
+  {
+    tech: 'JavaScript',
+    pic: iconJS,
+    id: 1,
+  },
+  {
+    tech: 'TypeScript',
+    pic: iconTS,
+    id: 2,
+  },
+  { tech: 'REACT', pic: iconReact, id: 3 },
+  { tech: 'REDUX', pic: iconRedux, id: 4 },
+  { tech: 'HTML5', pic: iconHTML, id: 5 },
+  { tech: 'CSS3', pic: iconCSS, id: 6 },
+  { tech: 'SASS', pic: iconSASS, id: 7 },
+  { tech: 'GIT', pic: iconGIT, id: 8 },
+];
+
+export const settingsForSlider = {
+  arrows: false,
+  infinite: true,
+  speed: 1000,
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 800,
+  responsive: [
+    {
+      breakpoint: 900,
+      settings: {
+        slidesToShow: 4,
+      },
+    },
+    {
+      breakpoint: 578,
+      settings: {
+        slidesToShow: 3,
+      },
+    },
+    {
+      breakpoint: 430,
+      settings: {
+        slidesToShow: 2,
+      },
+    },
+  ],
+};
