@@ -15,17 +15,20 @@ export default function About() {
     windowSize: { width },
   } = useWindowSize();
 
-  useEffect(() => {
-    setRootMargin(() => (width > 900 ? '-300px' : width < 360 ? '-10px' : '-40px'));
-  }, [value]);
+  // useEffect(() => {
+  //   setRootMargin(() => (width > 900 ? '-300px' : width < 360 ? '-10px' : '-40px'));
+  // }, [value]);
 
   return (
     <section
       style={{
-        opacity: `${value ? 1 : 0}`,
-        transition: `${value ? '0.7s all' : ''}`,
+        opacity: 1,
       }}
-      ref={elemRef}
+      // style={{
+      //   opacity: `${value ? 1 : 0}`,
+      //   transition: `${value ? '0.7s all' : ''}`,
+      // }}
+      // ref={elemRef}
       id="about"
       className={styles.about}
     >
