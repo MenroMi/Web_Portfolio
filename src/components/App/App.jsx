@@ -25,7 +25,7 @@ export default function App() {
         <About />
         <Projects />
         <TechStack />
-        {/* <Contact /> */}
+        <Contact />
       </div>
       <Footer />
       {burgerContext.isOpen && width <= 900 && (

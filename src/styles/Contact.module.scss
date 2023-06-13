@@ -1,10 +1,10 @@
-@import "../styles/mixins/opacity";
-@import "../styles/mixins/flexx";
+@import '../styles/mixins/opacity';
+@import '../styles/mixins/flexx';
 
 .contact {
   background-color: var(--clr-primary);
   min-height: 200px;
-  padding-top: var(--pdg-top);
+  padding-top: 50px;
   @include opc;
 
   &__title {
@@ -16,22 +16,47 @@
     margin-top: 50px;
     @include flex;
     button {
+      width: 100%;
+      height: 70px;
+      background-color: transparent;
       border: none;
-      border-radius: 10px;
-      &:hover {
-        border: none;
-        background-color: rgba(0, 0, 0, 0.2);
-      }
       a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: inherit;
+        height: inherit;
         font-size: 30px;
+        text-decoration: none;
+        border-radius: 10px;
         color: var(--clr-txt-primary);
+        transition: 0.3s all;
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.2);
+        }
+        &:active {
+          background-color: rgba(0, 0, 0, 0.4);
+        }
       }
     }
+  }
+}
 
-    button,
-    button > a {
-      height: 100%;
-      width: 100%;
+@media (max-width: 768px) {
+  .contact {
+    &__title {
+      font-size: 40px;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      button {
+        height: 100px;
+        a {
+          font-size: 35px;
+        }
+      }
     }
   }
 }
