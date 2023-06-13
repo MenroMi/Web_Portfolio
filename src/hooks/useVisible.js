@@ -1,7 +1,9 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from 'react';
+import useWindowSize from './useWIndowSize';
 
 export default function useVisible() {
   const [value, setValue] = useState(false);
+  const [rootMargin, setRootMargin] = useState('-300px');
   const elemRef = useRef(null);
 
   useEffect(() => {
@@ -10,7 +12,7 @@ export default function useVisible() {
     const options = {
       root: null,
       threshold: 0,
-      rootMargin: "-300px",
+      rootMargin: rootMargin,
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -31,5 +33,5 @@ export default function useVisible() {
     };
   }, [elemRef]);
 
-  return { value, setValue, elemRef };
+  return { value, setValue, elemRef, setRootMargin, rootMargin };
 }
