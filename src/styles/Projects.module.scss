@@ -1,4 +1,4 @@
-@import "../styles/mixins/opacity";
+@import '../styles/mixins/opacity';
 
 .projects {
   background-color: var(--clr-primary);
@@ -17,5 +17,31 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 60px;
+  }
+}
+
+@media (max-width: 900px) {
+  .projects {
+    &__title {
+      font-size: 40px;
+      text-align: center;
+    }
+
+    &__list {
+      margin-top: 100px;
+      gap: 40px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .projects {
+    &__title {
+      font-size: 30px;
+    }
+
+    &__list {
+      margin-top: 50px;
+    }
   }
 }

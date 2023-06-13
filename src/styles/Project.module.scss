@@ -1,12 +1,18 @@
 .project {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
   position: relative;
-  width: 350px;
+  max-width: 350px;
+  width: 100%;
   min-height: 300px;
   border-radius: 20px;
-  padding: 10px;
+  padding: 15px;
   background-color: var(--clr-project);
   transition: 0.2s all;
   &__info {
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -14,35 +20,85 @@
     &-title {
       color: var(--clr-border-lvl);
       font-size: 24px;
-      margin-left: 6px;
     }
 
     &-descr {
       font-size: 18px;
-      margin-left: 6px;
     }
 
     &-stack {
       display: flex;
-      margin: auto 0 0 6px;
-      gap: 20px;
+      margin: auto 0 0 0;
+      gap: 10px;
+      color: var(--clr-txt-primary);
+      li {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 8px;
+        border-radius: 999em;
+        text-align: center;
+      }
     }
   }
 
   &:hover {
     transform: translateY(-10px);
     .icon-link {
-      color: var(--clr-border-lvl);
+      fill: var(--clr-border-lvl);
     }
   }
 }
 
 .icon-folder {
-  color: var(--clr-border-lvl);
+  height: 46px;
+  width: 46px;
+  fill: var(--clr-border-lvl);
 }
 
 .icon-link {
+  height: 43px;
+  width: 43px;
+  position: absolute;
+  top: 15px;
+  right: 20px;
   transition: 0.2s all;
+  fill: var(--clr-icon-link);
+}
 
-  color: var(--clr-icon-link);
+@media (max-width: 900px) {
+  .project {
+    max-width: 100%;
+    min-height: 200px;
+    padding: 20px;
+  }
+
+  .icon-link {
+    top: 20px;
+  }
+}
+
+@media (max-width: 578px) {
+  .project {
+    max-width: 100%;
+    min-height: 200px;
+    &__info {
+      &-title {
+        font-size: 20px;
+      }
+
+      &-descr {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .icon-folder {
+    height: 30px;
+    width: 30px;
+  }
+
+  .icon-link {
+    height: 28px;
+    width: 28px;
+    top: 20px;
+  }
 }
