@@ -1,32 +1,45 @@
 .nav {
-  &__cells {
-    height: 80px;
-    align-items: center;
-    max-width: var(--width-container);
-    width: 100%;
-    margin: 0 auto;
-  }
+  height: 70px;
+  align-items: center;
+  max-width: var(--width-container);
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+}
 
-  &__menu,
-  &__cells {
-    display: flex;
-    justify-content: space-between;
+nav > .btn-wrapper {
+  display: flex;
+  gap: 5px;
+
+  .btn {
+    width: 100px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    color: var(--clr-txt-primary);
+    border-radius: var(--border-btn);
+    border: 2px solid transparent;
+    transition: 0.2s all;
+    &:hover {
+      border: 2px solid var(--clr-txt-primary);
+    }
+
+    &:active {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    a {
+      width: 100%;
+      color: var(--clr-txt-primary);
+      text-decoration: none;
+    }
   }
 }
 
-nav > div .Button {
-  width: 100px;
-  height: 40px;
-  border: none;
-  color: var(--clr-txt-primary);
-  border-radius: var(--border-btn);
-  &:hover {
-    border: 2px solid var(--clr-txt-primary);
-  }
-
-  a {
-    width: 100%;
-    color: var(--clr-txt-primary);
-    text-decoration: none;
+@media (max-width: 768px) {
+  .nav {
+    padding: 0 20px;
   }
 }

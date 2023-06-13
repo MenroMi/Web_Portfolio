@@ -1,30 +1,42 @@
-import Logo from "../Logo/Logo";
+import Logo from '../Logo/Logo';
 
 // styles
-import Button from "@mui/material/Button";
-import { Stack } from "@mui/material";
-import styles from "../../styles/Navigation.module.scss";
-
-const btnsArr = [
-  { label: "About", link: "about", id: 1 },
-  { label: "projects", link: "projects", id: 2 },
-  { label: "my Stack", link: "stack", id: 3 },
-  { label: "contact", link: "contact", id: 4 },
-];
+import styles from '@/styles/Navigation.module.scss';
+import { buttonsArray } from '@/constants';
+import useWindowSize from '@/hooks/useWIndowSize';
+import { useContext, useState } from 'react';
+import onChangeStateBurgerMenu from '@/utils/navigation/onChangeStateBurgerMenu';
+import DropdownMenu from '../DropdownMenu/DropdownMenu';
+import { BurgerMenuContext } from '@/providers/burgerMenuContext';
 
 export default function Navigation() {
+  const {
+    windowSize: { width },
+  } = useWindowSize();
+  const burgerContext = useContext(BurgerMenuContext);
+
+  const onChangeViewMenu = (btns) => {
+    if (width > 900) {
+      return btns.map(({ label, link, id }) => {
+        return (
+          <button className={styles.btn} key={id} variant="text">
+            <a href={`#${link}`}>{label}</a>
+          </button>
+        );
+      });
+    } else {
+      return onChangeStateBurgerMenu(burgerContext.isOpen, burgerContext.setIsOpen);
+    }
+  };
+
   return (
-    <nav className={styles["nav__cells"]}>
-      <Logo />
-      <Stack direction="row" spacing={3}>
-        {btnsArr.map(({ label, link, id }) => {
-          return (
-            <Button className={styles.Button} key={id} variant="text">
-              <a href={`#${link}`}>{label}</a>
-            </Button>
-          );
-        })}
-      </Stack>
-    </nav>
+    <>
+      <nav className={styles.nav}>
+        <Logo />
+        <div className={styles['btn-wrapper']}>{onChangeViewMenu(buttonsArray)}</div>
+      </nav>
+      {width < 900 && burgerContext.isOpen && <DropdownMenu />}
+      {width < 900 && burgerContext.isOpen && <div className={styles.overlay}></div>}
+    </>
   );
 }

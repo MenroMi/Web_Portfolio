@@ -8,18 +8,25 @@ import Contact from '../Contact/Contact';
 
 // styles
 import styles from '@/styles/Home.module.scss';
+import { useContext } from 'react';
+import { BurgerMenuContext } from '@/providers/burgerMenuContext';
 
 export default function App() {
+  const burgerContext = useContext(BurgerMenuContext);
+
   return (
     <>
       <div className={styles.sections}>
         <Me />
-        {/* <About /> */}
-        {/* <Projects /> */}
+        <About />
+        <Projects />
         {/* <TechStack /> */}
         {/* <Contact /> */}
       </div>
       <Footer />
+      {burgerContext.isOpen && (
+        <div onClick={burgerContext.setIsOpen} className={styles.overlay}></div>
+      )}
     </>
   );
 }
